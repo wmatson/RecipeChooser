@@ -1,0 +1,19 @@
+<div class="mainDiv">
+    <div>
+      <h3>
+        <a href="{{recipe.link}}" target="_blank">{{recipe.name}}</a>
+        <button class="btn btn-mini" (click)="ingredientsVisible = !ingredientsVisible">Toggle Ingredients</button>
+      </h3>
+    </div>
+    <div [class.hidden]="!ingredientsVisible" [class.ingredients]="true">
+      <div class="panel panel-default" *ngFor="let category of recipe.ingredients">
+        <div class="panel-heading">{{category.category}}</div>
+        <table class="table table-striped">
+            <tr><th>Amount</th><th>Name</th></tr>
+            <tr *ngFor="let ingredient of category.ingredients">
+                <td>{{ingredient.amount}}</td><td>{{ingredient.name}}</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+</div>

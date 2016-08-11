@@ -1,0 +1,10 @@
+.hidden {
+  display: none;
+}
+.panel {
+  break-inside: avoid;
+  margin-bottom: 1px;
+}
+div.ingredients {
+  column-count: 4;
+}

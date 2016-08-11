@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <form class="form form-inline">
+        <input class="form-control" [(ngModel)]="nameSearch" placeholder="nameSearch">
+        <input class="form-control" [(ngModel)]="ingredientSearch" placeholder="ingredientSearch">
+        <input class="form-control" [(ngModel)]="excludeIngredientSearch" placeholder="excludeIngredientSearch">
+    </form>
+    <div class="well" *ngFor="let recipe of filtered(recipes, nameSearch, ingredientSearch, excludeIngredientSearch)">
+        <recipe-detail [recipe]="recipe"></recipe-detail>
+    </div>
+</div>
